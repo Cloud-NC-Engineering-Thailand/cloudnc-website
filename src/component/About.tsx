@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { SlideInElement } from "../hook/slideInElement";
 
 
 const AboutImg = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589833/about_wdc8bb.webp";
@@ -8,26 +8,9 @@ const AboutImg = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589833/
 const About = () => {
 
     const AboutRef = useRef<HTMLImageElement>(null);
-    const tempRef = useRef<HTMLImageElement>(null);
 
-    useEffect(() => {
-        const el = AboutRef.current;
-        const elt = tempRef.current;
-        gsap.fromTo(el, {
-            opacity:0,
-            transform: "translateX(60px)"
-        },
-        {
-            opacity:1,
-            transform: "translateX(0)",
-            duration:1,
-            scrollTrigger:{
-                trigger:elt
-            },
-         }
-        );
-    }, []);
-
+    SlideInElement({ element:AboutRef, translateX:"60", duration:1})
+    
     return (                    
     <div className="w-full  opacity-0" ref={AboutRef}>
         <p className="header" >เกี่ยวกับเรา</p>
@@ -52,7 +35,6 @@ const About = () => {
                 </p>
             </div>  
         </div>
-        <div ref={tempRef}></div>
     </div>
 );
 };
