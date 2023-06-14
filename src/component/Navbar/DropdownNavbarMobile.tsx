@@ -51,9 +51,9 @@ export const DropdownNavbarMobile: React.FC<DropdownNavbarMobileProps> = ({optio
   <div
     className={`${open ? "block animate-slideup" : "hidden"} transition-transform z-10 rounded   w-max border-l border-slate-300`}
   >
-    <ul className="flex flex-col gap-4 py-1  p-4">
+    <ul className="flex flex-col gap-4 py-1 p-4 ">
       {option.map((item, i) => (
-        <Link onClick={handleCloseDrawer} to={item.path} key={i} className={`hover:text-blue-500 cursor-pointer font-normal ${currentIndex && currentSubIndex === i && "text-blue-500"}`}>
+        <Link onClick={handleCloseDrawer} to={item.path} key={i} className={`w-[85vw] min-[350px]:w-[90vw] whitespace-pre-wrap hover:text-blue-500 cursor-pointer font-normal ${currentIndex && currentSubIndex === i && "text-blue-500"}`}>
           {item.key}
        </Link>
       ))}

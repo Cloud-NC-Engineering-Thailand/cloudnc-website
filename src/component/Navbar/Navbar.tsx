@@ -190,11 +190,11 @@ export const Navbar = () => {
     </div>
     
     <div
-    className={`bg-white shadow-xl fixed w-full  min-h-[100vh] overflow-hidden p-2 z-50 transition-all top-0 ${state.openDrawer ? "right-0" : "-right-[105%]"}`}>
+    className={`bg-white shadow-xl fixed w-full  min-h-[100vh] overflow-y-hidden p-2 z-50 transition-all top-0 ${state.openDrawer ? "right-0" : "-right-[105%]"}`}>
         <div className="flex flex-col gap-4 mt-8 p-2 h-auto overflow-y-scroll max-h-[100vh] min-h-screen scrollbar-nav ">
             <div className="w-16 h-16 mx-auto">
-                <img
-                        loading="lazy"
+                <LazyLoadImage
+                loading="lazy"
                 src={Logo}
                 className="w-full h-full cursor-pointer"
                 onClick={handleDrawer}

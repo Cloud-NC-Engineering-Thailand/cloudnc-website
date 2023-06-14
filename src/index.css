@@ -53,10 +53,11 @@ body {
   background: url("https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589834/footerbg_rd5suw.webp") no-repeat fixed center;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-position-x: 50%;
+  background-position-x: 40%;
   background-position-y: 100%;
-  background-size: auto;
+  background-size: cover;
   height: auto;
+  width: 100%;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -99,6 +100,8 @@ body {
 .bg-banner {
   background-image: url("https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589833/bgbanner_mrwwhp.jpg");
   width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
