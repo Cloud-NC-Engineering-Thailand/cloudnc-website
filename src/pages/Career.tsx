@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Contact } from "../component/Contact";
 import gsap from "gsap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
 
 const TenFact = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589470/career/10fact_qcxjlg.png";
 const Welfare = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589468/career/welfarebenefit_hj8lf3.png";
@@ -140,6 +141,9 @@ function Career() {
             <div className="grid grid-cols-1 gap-1" ref={OpeningJobRef}>
                 <h6 className="header ">ตำแหน่งที่รับสมัคร</h6>
                 <div className="flex flex-col gap-8 items-center">
+                    <Link
+                    to="/job/software"
+                    >
                     <LazyLoadImage
                     loading="lazy"
                     src={Software}
@@ -148,6 +152,10 @@ function Career() {
                     className="max-w-[25rem] max-h-[6.875rem] object-contain w-full h-full"
                     alt="Cloudnc Ten Fact"
                     />
+                    </Link>
+                    <Link
+                    to="/job/intern"
+                    >
                     <LazyLoadImage
                     loading="lazy"
                     src={Intern}
@@ -156,6 +164,7 @@ function Career() {
                     className="max-w-[25rem] max-h-[6.875rem] object-contain w-full h-full"
                     alt="Cloudnc Ten Fact"
                     />
+                    </Link>
                 </div>
             </div>
         </div>
@@ -166,6 +175,7 @@ function Career() {
     header="ร่วมงานกับเรา"
     title="Join Us"
     email={import.meta.env.VITE_WORK_EMAIL}
+    file={true}
     />
 
    </div>
