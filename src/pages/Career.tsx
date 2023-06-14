@@ -10,7 +10,7 @@ const WelfareStd = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v168658947
 const Intern = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589466/career/intern_ooctdk.webp";
 const Software = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589467/career/software_u3xz9i.webp";
 
-function MemoizedCareer() {
+function Career() {
 
     
     const FactRef = useRef<HTMLDivElement>(null);
@@ -174,5 +174,5 @@ function MemoizedCareer() {
 );
 }
 
-const Career = React.memo(MemoizedCareer);
+
 export default Career;

@@ -184,7 +184,6 @@ export const Navbar = () => {
         </div>
 
     </div>
-
     <div className={`${state.visible ? "top-[7.2vh] md:top-[6.2vh]" : "top-[0.1vh] md:top-[0.05vh]"} sticky  left-0 w-full h-1 bg-gray-200  z-30`}>
         <div ref={progressBarRef} className="h-full bg-blue-500"></div>
     </div>
