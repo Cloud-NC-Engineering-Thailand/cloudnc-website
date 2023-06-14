@@ -1,0 +1,175 @@
+
+  
+.slider-wrap {
+    width: 100%;
+    height: 344px;
+    border: none;
+    cursor: grab;
+}
+  
+.slider {
+    height: 344px;
+    width: 100%;
+    /* overflow-x: scroll; */
+}
+
+
+.items {
+    position: relative;
+    width: 500px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: grid;
+    grid-auto-flow: column;
+  }
+  
+.slider-inner {
+    display: flex;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    width: 3000px;
+    display: flex;
+}
+  
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1%;
+}
+  
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+.slider {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+  
+
+  
+  .App {
+    width: 100%;
+    min-height: 200vh;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+  }
+  
+  .box {
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    background-color: plum;
+    border: 1px solid rgb(0, 0, 0);
+  }
+  
+.items {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: grid;
+    grid-auto-flow: column;
+}
+  
+.items {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+  .items::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  
+
+/* 
+  
+.slider-wrap {
+    position: relative;
+    width: 100%;
+    cursor: grab;
+}
+  
+.slider {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 300px;
+    min-height: 200px;
+    width: 100%;
+    overflow: scroll;
+}
+  
+.slider-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 180%;
+    height: 100%;
+    display: flex;
+}
+  
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 98%;
+    top: 1%;
+    background-color: rgb(205, 205, 205);
+    border: 1px solid rgb(0, 0, 0);
+}
+  
+.progress-bar {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+  
+.prog-bar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(62, 62, 62);
+}
+
+  .slider::-webkit-scrollbar {
+    display: none;
+}
+.slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+  
+*/

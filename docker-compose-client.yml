@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+ cloudnc-website:
+    image: cloudnc-website
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 8080:8080
+    networks:
+      - frontend
+    restart: unless-stopped
+    env_file:
+      - .env
+networks:
+  frontend:

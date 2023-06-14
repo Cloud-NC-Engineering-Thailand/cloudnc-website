@@ -1,0 +1,11 @@
+.select {
+    display: flex;
+}
+
+.dropdown {
+    display: none;
+}
+
+.select:hover .dropdown {
+    display: flex;
+}
