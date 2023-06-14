@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { Contact } from "../component/Contact";
 import gsap from "gsap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import React from "react";
 
 const TenFact = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589470/career/10fact_qcxjlg.png";
 const Welfare = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589468/career/welfarebenefit_hj8lf3.png";
