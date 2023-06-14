@@ -118,7 +118,7 @@ export const Navbar = () => {
     return (
         <>
         
-    <div className={`z-50 w-full p-4 text-lg text-gray-600 font-light shadow-lg  animate-slideup
+    <div className={`z-40 w-full p-4 text-lg text-gray-600 font-light shadow-lg  animate-slideup
          transition duration-300 bg-white h-[7vh] md:h-[6vh] sticky top-0 ${state.visible ? "opacity-100" : "opacity-0"}
         `} >
         <div className=" hidden md:flex gap-8 justify-center ">
@@ -190,9 +190,9 @@ export const Navbar = () => {
     </div>
     
     <div
-    className={`bg-white shadow-xl fixed w-full  min-h-[100vh] overflow-y-hidden p-2 z-50 transition-all top-0 ${state.openDrawer ? "right-0" : "-right-[105%]"}`}>
-        <div className="flex flex-col gap-4 mt-8 p-2 h-auto overflow-y-scroll max-h-[100vh] min-h-screen scrollbar-nav ">
-            <div className="w-16 h-16 mx-auto">
+    className={`bg-white shadow-xl fixed w-full  min-h-[100vh] h-full overflow-hidden z-50 transition-all top-0 ${state.openDrawer ? "right-0" : "-right-[105%]"}`}>
+        <div className="flex flex-col gap-4  h-auto overflow-y-scroll max-h-[100vh] min-h-screen scrollbar-nav p-2">
+            <div className="w-16 h-16 mx-auto mt-8">
                 <LazyLoadImage
                 loading="lazy"
                 src={Logo}
@@ -206,7 +206,9 @@ export const Navbar = () => {
             currentSubIndex={state.currentSubIndex}
             handleCloseDrawer={handleDrawer}
             />
-            <TopSection/>
+            <div className="mb-4">
+                <TopSection/>
+            </div>
             {/* <TextInsideNavbarMobile/> */}
             {/* <TextInsideNavbarMobile/> */}
         </div>

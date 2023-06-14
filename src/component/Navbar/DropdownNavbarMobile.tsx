@@ -24,7 +24,7 @@ export const DropdownNavbarMobile: React.FC<DropdownNavbarMobileProps> = ({optio
     <>
     <div className="">
         <button 
-        className={`flex items-center gap-2   ${open ? "border-0" : "text-slate-600 border-b w-full"} ${currentIndex && "text-blue-500"}`} 
+        className={`flex items-center gap-2   ${open ? "border-0 text-blue-500" : "text-slate-600 border-b w-full"} ${currentIndex && "text-blue-500"}`} 
         type="button"
         onClick={() => setOpen(prev => !prev)}
         >
@@ -53,7 +53,7 @@ export const DropdownNavbarMobile: React.FC<DropdownNavbarMobileProps> = ({optio
   >
     <ul className="flex flex-col gap-4 py-1 p-4 ">
       {option.map((item, i) => (
-        <Link onClick={handleCloseDrawer} to={item.path} key={i} className={`w-[85vw] min-[350px]:w-[90vw] whitespace-pre-wrap hover:text-blue-500 cursor-pointer font-normal ${currentIndex && currentSubIndex === i && "text-blue-500"}`}>
+        <Link onClick={handleCloseDrawer} to={item.path} key={i} className={`w-[85vw] min-[350px]:w-[90vw] whitespace-pre-wrap break-words hover:text-blue-500 cursor-pointer font-normal ${currentIndex && currentSubIndex === i && "text-blue-500"}`}>
           {item.key}
        </Link>
       ))}

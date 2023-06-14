@@ -165,6 +165,7 @@ function MemoizedCareer() {
     <div className="mt-32 md:mt-48">
     <Contact
     header="ร่วมงานกับเรา"
+    title="Join Us"
     email={import.meta.env.VITE_WORK_EMAIL}
     />
 
