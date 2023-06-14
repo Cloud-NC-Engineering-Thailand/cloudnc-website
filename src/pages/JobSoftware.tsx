@@ -40,6 +40,7 @@ function MemoizedJobSoftware() {
     title="Join Us"
     translateX="-60"
     titleClass="text-lg font-bold"
+    email={import.meta.env.VITE_WORK_EMAIL}
     />
    </div>
 

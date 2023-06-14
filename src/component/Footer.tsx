@@ -9,7 +9,7 @@ export const Footer = () => {
 
 
     return (
-    <div className="bg-red-100 grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 footer px-8 place-items-center mt-8 py-16" >
+    <div className="bg-red-100 grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 footer px-8 place-items-center mt-8 py-16 w-full" >
         <div className="flex flex-col flex-wrap items-center gap-8">
             <LazyLoadImage
             loading="lazy"

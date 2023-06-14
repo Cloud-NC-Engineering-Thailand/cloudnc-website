@@ -93,10 +93,12 @@ body {
   position: relative;
   background-image: url("https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589466/career/bg_ulsp7l.png");
   background-position-x: 50%;
+  width: 100vw;
 }
 
 .bg-banner {
   background-image: url("https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589833/bgbanner_mrwwhp.jpg");
+  width: 100vw;
 }
 
 

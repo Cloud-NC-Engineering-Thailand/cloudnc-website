@@ -30,7 +30,7 @@ export const optionServiceMobile:OptionType[] = [
         path:"/service"
     },
     {
-        key:"บริการจัดอบรมdasd",
+        key:"บริการจัดอบรม",
         path:"/training"
     },
     {

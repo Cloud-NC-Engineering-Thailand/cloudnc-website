@@ -29,7 +29,7 @@ export const Layout = () => {
 
     <Navbar/>
 
-        <div className="min-h-[30vh]">
+        <div className="min-h-[30vh] overflow-x-hidden">
             <Outlet/>   
         </div>
             

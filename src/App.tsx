@@ -19,7 +19,7 @@ const ServicePage = lazy(() => import("./pages/Service").then(module => ({defaul
 function App() {
 
   return (
-    <div className="font-mitr overflow-x-hidden">
+    <div className="font-mitr">
       <Routes>
       <Route element={<Layout/>}>
         <Route path="/" element={

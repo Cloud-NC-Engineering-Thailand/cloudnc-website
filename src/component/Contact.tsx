@@ -19,8 +19,9 @@ interface ContactProp {
     title?:string;
     titleClass?:string;
     translateX?:string;
+    email?:string;
 }
-export const Contact: React.FC<ContactProp> = ({header="ติดต่อเรา", padding="px-4 md:px-32 lg:px-64", file=false, title="คลิกเพื่อส่งข้อความหาเรา", titleClass="text-base", translateX}) => {
+export const Contact: React.FC<ContactProp> = ({header="ติดต่อเรา", padding="px-4 md:px-32 lg:px-64", file=false, title="คลิกเพื่อส่งข้อความหาเรา", titleClass="text-base", translateX, email=import.meta.env.VITE_MARKETING_EMAIL}) => {
     
     const [state, setState] = useState<ContactState>({
         open:false,
@@ -66,7 +67,7 @@ export const Contact: React.FC<ContactProp> = ({header="ติดต่อเร
                 <div className="flex flex-col gap-3">
                     <div className="flex gap-1">
                         <EmailSearch theme="outline" size="24" className="text-blue-500"/>
-                        <h6 className="text-slate-500 text-base font-semibold truncate">marketing@cloudnatician.com</h6>
+                        <h6 className="text-slate-500 text-base font-semibold truncate">{email}</h6>
                     </div>
 
                     <div className="flex gap-1">
