@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
 import { Contact } from "../component/Contact";
-import gsap from "gsap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const TenFact = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589470/career/10fact_qcxjlg.png";
 const Welfare = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589468/career/welfarebenefit_hj8lf3.png";
@@ -12,80 +11,10 @@ const Software = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589467/
 
 function Career() {
 
-    
-    const FactRef = useRef<HTMLDivElement>(null);
-    const WelfareRef = useRef<HTMLDivElement>(null);
-    const WelfareStdRef = useRef<HTMLDivElement>(null);
-    const OpeningJobRef = useRef<HTMLDivElement>(null);
-    
-
-    useEffect(() => {
-        const elf = FactRef.current;
-        const el = WelfareRef.current;
-        const elw = WelfareStdRef.current;
-        const elj = OpeningJobRef.current;
-        
-        gsap.fromTo(elf, {
-            opacity:0,
-            transform: "translateX(80px)"
-        },
-        {
-            opacity:1,
-            transform: "translateX(0)",
-            duration:1.2,
-            scrollTrigger:{
-                trigger:elf,
-            },
-         }
-        );
-        
-        gsap.fromTo(el, {
-            opacity:0,
-            transform: "translateX(-80px)"
-        },
-        {
-            opacity:1,
-            transform: "translateX(0)",
-            duration:1,
-            scrollTrigger:{
-                trigger:el,
-                start: "top 40%",
-                end:"bottom 100%" 
-            },
-         }
-        );
-        gsap.fromTo(elw, {
-            opacity:0,
-            transform: "translateX(80px)"
-        },
-        {
-            opacity:1,
-            transform: "translateX(0)",
-            duration:1.2,
-            scrollTrigger:{
-                trigger:elw,
-                start: "top 40%",
-                end:"bottom 100%" 
-            },
-         }
-        );
-        
-        gsap.fromTo(elj, {
-            opacity:0,
-            transform: "translateX(-80px)"
-        },
-        {
-            opacity:1,
-            transform: "translateX(0)",
-            duration:1.2,
-            scrollTrigger:{
-                trigger:elj,
-                start: "top 40%",
-                end:"bottom 100%" 
-            },
-         }
-        );
-    }, []);
+    ActionIntoView("#fact", "animate-slideright", 0.01)
+    ActionIntoView("#welfare", "animate-slideleft", 0.01)
+    ActionIntoView("#welfareStd", "animate-slideright", 0.01)
+    ActionIntoView("#openingJob", "animate-slideleft", 0.01)
     
 
     return (
@@ -94,7 +23,7 @@ function Career() {
         
         <div className="career-bg  w-full grid grid-cols-1 gap-12 md:gap-36 justify-center px-4 md:px-32 lg:px-64 my-8">
 
-            <div className="grid grid-cols-1 gap-1 min-h-[50vh]" ref={FactRef}>
+            <div className="grid grid-cols-1 gap-1 min-h-[50vh]" id="fact">
                 <h6 className="header " >10 ข้อเท็จจริงเกี่ยวกับคลาวด์เอ็นซี</h6>
                 <div className="w-full h-full">
                     <LazyLoadImage
@@ -108,7 +37,7 @@ function Career() {
                 </div>
             </div>
             
-            <div className="grid grid-cols-1 gap-1" ref={WelfareRef}>
+            <div className="grid grid-cols-1 gap-1 opacity-0" id="welfare">
                 <h6 className="header ">สวัสดิการสำหรับพนักงาน</h6>
                 <div className="w-full h-full">
                     <LazyLoadImage
@@ -124,7 +53,7 @@ function Career() {
 
 
 
-            <div className="grid grid-cols-1 gap-1" ref={WelfareStdRef}>
+            <div className="grid grid-cols-1 gap-1 opacity-0" id="welfareStd">
                 <h6 className="header ">สวัสดิการสำหรับนักศึกษาฝึกงาน</h6>
                 <div className="w-full h-full">
                     <LazyLoadImage
@@ -138,7 +67,7 @@ function Career() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-1" ref={OpeningJobRef}>
+            <div className="grid grid-cols-1 gap-1 opacity-0" id="openingJob">
                 <h6 className="header ">ตำแหน่งที่รับสมัคร</h6>
                 <div className="flex flex-col gap-8 items-center">
                     <Link
@@ -172,6 +101,7 @@ function Career() {
 
     <div className="mt-32 md:mt-48">
     <Contact
+    id="career-contac"
     header="ร่วมงานกับเรา"
     title="Join Us"
     email={import.meta.env.VITE_WORK_EMAIL}

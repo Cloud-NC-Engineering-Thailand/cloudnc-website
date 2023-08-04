@@ -1,18 +1,21 @@
-import { useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 
 const AboutImg = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589833/about_wdc8bb.webp";
 
 const About = () => {
 
-    const AboutRef = useRef<HTMLImageElement>(null);
+    // const AboutRef = useRef<HTMLImageElement>(null);
 
-    SlideInElement({ element:AboutRef, translateX:"60", duration:1})
-    
+    // SlideInElement({ element:AboutRef, translateX:"60", duration:1})
+
+    ActionIntoView("#about-comp", "animate-slideright")
+
     return (                    
-    <div className="w-full  opacity-0" ref={AboutRef}>
+    <div className="w-full  opacity-0" 
+    id="about-comp"
+    >
         <p className="header" >เกี่ยวกับเรา</p>
         <div className="w-full flex flex-wrap 2xl:flex-nowrap  gap-12 justify-center px-4 lg:px-32 2xl:px-64">
             <div className="w-full 2xl:w-1/2 h-[23rem]">

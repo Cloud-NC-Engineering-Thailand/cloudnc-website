@@ -1,18 +1,15 @@
 import { Contact } from "../component/Contact";
 import Slider from "../component/Slider/Slider";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import React, { useRef } from "react";
+import React from "react";
 import { TraningComp } from "../component/TraningComp";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Banner = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589819/training/Banner_skrozs.jpg";
 
 function MemoizedTraining() {
 
-    const sliderRef = useRef<HTMLImageElement>(null);
-
-    SlideInElement({element:sliderRef, translateX:"-60", start:undefined});
-    
+    ActionIntoView("#slideRef", "animate-slideleft")
 
     return (
     <>
@@ -36,10 +33,12 @@ function MemoizedTraining() {
         </div>
       
         <TraningComp
-        translateX="60"
+        animate="animate-slideright"
         />
 
-        <div className="flex flex-col my-4 mt-8" ref={sliderRef}>
+        <div className="flex flex-col my-4 mt-8" 
+        id="slideRef"
+        >
             <h6 className="header-no-mb">รวมภาพบรรยากาศการสอน</h6>
             <Slider/>
         </div>
@@ -48,6 +47,7 @@ function MemoizedTraining() {
     
 
     <Contact
+    id="traning-contact"
     header="ขอใบเสนอราคา"
     />
     </>

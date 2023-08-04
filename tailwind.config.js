@@ -28,11 +28,11 @@ export default {
           to: { opacity: 1, transform: 'none' },
         },
         slideleft: {
-          from: { opacity: 0, transform: 'translateX(-20px)' },
+          from: { opacity: 0, transform: 'translateX(-20%)' },
           to: { opacity: 1, transform: 'translateX(0)' },
         },
         slideright: {
-          from: { opacity: 0, transform: 'translateX(20px)' },
+          from: { opacity: 0, transform: 'translateX(20%)' },
           to: { opacity: 1, transform: 'translateX(0)' },
         },
         wave: {

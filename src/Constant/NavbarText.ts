@@ -21,6 +21,15 @@ export const optionService:OptionType[] = [
         key:"บริการช่วยควบคุมต้นทุนการใช้คลาวด์",
         path:"/costoptimization"
     },
+    {
+        key:"บริการให้คำปรึกษาด้านการทำเว็บไซด์",
+        path:"/website-service"
+    },
+    {
+        key:"บริการให้คำปรึกษาด้านการทดสอบระบบ",
+        path:"/tester-service"
+    },
+
 ];
 
 // ส่วนของ dropdown บริการแต่เป็ยของ mobile เพราะ animation ไม่เหมือนกันเลยต้องแยก
@@ -45,6 +54,15 @@ export const optionServiceMobile:OptionType[] = [
         key:"บริการช่วยควบคุมต้นทุนการใช้คลาวด์",
         path:"/costoptimization"
     },
+    {
+        key:"บริการให้คำปรึกษาด้านการทำเว็บไซด์",
+        path:"/website-service"
+    },
+    {
+        key:"บริการให้คำปรึกษาด้านการทดสอบระบบ",
+        path:"/tester-service"
+    },
+
 ];
 
 // Dropdown ตำแหน่ง

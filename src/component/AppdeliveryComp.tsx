@@ -1,21 +1,22 @@
-import React, { useRef } from "react";
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 interface AppdeliveryCompProps {
-    translateX:string
+    animate:string
 }
 
 const Comp1 = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589423/appdelivery/comp1_zk7bj9.webp";
 
-export const AppdeliveryComp: React.FC<AppdeliveryCompProps> = ({translateX="60"}) => {
+export const AppdeliveryComp: React.FC<AppdeliveryCompProps> = ({animate="animate-slideleft"}) => {
 
-    const AppDeliverRef = useRef<HTMLImageElement>(null);
-    SlideInElement({element:AppDeliverRef, translateX:translateX, start:undefined});
-   
+    ActionIntoView("#appdeliver", animate)
+
     return (
     <>
        
-       <div className="career-bg mt-16" ref={AppDeliverRef}>
+       <div className="career-bg mt-16 opacity-0" 
+       id="appdeliver"
+       >
             <h6 className="header">บริการคำปรึกษาด้านการพัฒนาแอป </h6>
             <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-12 justify-center px-4 md:px-32 lg:px-64">
                 <div className="max-w-[30rem] max-h-[30rem] md:w-[42.1875rem] md:h-[42.1875rem]  mx-auto ">

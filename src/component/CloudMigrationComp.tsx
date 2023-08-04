@@ -1,24 +1,29 @@
-import React, { useRef } from "react";
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Comp1 = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589535/cloudMigration/comp_jvmugx.webp";
 
 interface CloudMigrationCompProps {
-    translateX:string
+    animate:string
 }
 
-export const CloudMigrationComp: React.FC<CloudMigrationCompProps> = ({translateX="60"}) => {
+export const CloudMigrationComp: React.FC<CloudMigrationCompProps> = ({animate="animate-slideright"}) => {
 
 
-    const CloudMigrationRef = useRef<HTMLImageElement>(null);
-    SlideInElement({element:CloudMigrationRef, translateX, duration:1.2});
+    // const CloudMigrationRef = useRef<HTMLImageElement>(null);
+    // SlideInElement({element:CloudMigrationRef, translateX, duration:1.2});
+
+    ActionIntoView("#cloudmigration", animate)
+
 
     return (
     <>
     
     {/* <CloudMigration/> */}
-    <div className="career-bg mt-16" ref={CloudMigrationRef}>
+    <div className="career-bg mt-16 opacity-0" 
+    id="cloudmigration"
+    >
             <h6 className="header">บริการย้ายข้อมูลขึ้นคลาวด์</h6>
             <div className="w-full grid grid-cols-1 gap-12 justify-center px-4 md:px-32 lg:px-64">
                 <div className="max-w-[30rem] max-h-[30rem] md:w-[42.1875rem] md:h-[42.1875rem] mx-auto">

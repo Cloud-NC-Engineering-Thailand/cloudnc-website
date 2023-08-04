@@ -13,7 +13,6 @@ interface DropdownNavbarMobileProps {
     currentIndex?:boolean;
     currentSubIndex?:number;
     handleCloseDrawer:() => void;
-
 }
 
 export const DropdownNavbarMobile: React.FC<DropdownNavbarMobileProps> = ({option, title, children, currentIndex=false, currentSubIndex=-1, handleCloseDrawer}) => {

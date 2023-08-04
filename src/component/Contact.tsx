@@ -1,10 +1,10 @@
 import EmailSearch from "@icon-park/react/lib/icons/EmailSearch";
 import PhoneCall from "@icon-park/react/lib/icons/PhoneCall";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Local from "@icon-park/react/lib/icons/Local";
 import { DialogNoFile } from "./Dialog/DialogNoFile";
 import { DialogWithFile } from "./Dialog/DialogWithFile";
-import { gsap } from "gsap";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Line = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589832/line-blue_j5th6p.svg";
 
@@ -18,32 +18,17 @@ interface ContactProp {
     file?:boolean
     title?:string;
     titleClass?:string;
-    translateX?:string;
+    animate?:string;
     email?:string;
+    id:string
 }
-export const Contact: React.FC<ContactProp> = ({header="ติดต่อเรา", padding="px-4 md:px-32 lg:px-64", file=false, title="คลิกเพื่อส่งข้อความหาเรา", titleClass="text-base", translateX, email=import.meta.env.VITE_MARKETING_EMAIL}) => {
+export const Contact: React.FC<ContactProp> = ({header="ติดต่อเรา", padding="px-4 md:px-32 lg:px-64", file=false, title="คลิกเพื่อส่งข้อความหาเรา", titleClass="text-base", animate="animate-slideright", email=import.meta.env.VITE_MARKETING_EMAIL, id}) => {
     
     const [state, setState] = useState<ContactState>({
         open:false,
     });
 
-    const ContactRef = useRef<HTMLImageElement>(null);
-    useEffect(() => {
-        const el = ContactRef.current;
-        gsap.fromTo(el, {
-            opacity:0,
-            transform: `translateX(${translateX}px)`
-        },
-        {
-            opacity:1,
-            transform: "translateX(0)",
-            duration:1,
-            scrollTrigger:{
-                trigger:el,
-            },
-         }
-        );
-    }, []);
+    ActionIntoView(`#${id}`, animate, 0.1)
     
     return (
     <>
@@ -58,7 +43,7 @@ export const Contact: React.FC<ContactProp> = ({header="ติดต่อเร
     name="description"
     />
 
-    <div className="w-full " ref={ContactRef}>
+    <div className="w-full opacity-0" id={id}>
         <p className="header">{header}</p>
         <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-12 justify-center ${padding}`}>
             <div className="flex flex-col gap-4">

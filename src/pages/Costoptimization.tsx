@@ -1,19 +1,16 @@
-import { useRef } from "react";
 import { Contact } from "../component/Contact";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import React from "react";
 import { CostOptimizationComp } from "../component/CostOptimizationComp";
-import { SlideInElement } from "../hook/slideInElement";
+// import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Banner = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589597/costoptimization/banner_ft11ie.jpg";
 const Diagram = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589597/costoptimization/Diagram_os2oq3.webp";
 
 function MemoizedCostOptimization() {
 
-
-    const DiagramRef = useRef<HTMLImageElement>(null);
-    
-    SlideInElement({element:DiagramRef, translateX:"-60"});
+    ActionIntoView("#diagram", "animate-slideright")
 
     return (
     <>
@@ -28,11 +25,13 @@ function MemoizedCostOptimization() {
         
 
             <CostOptimizationComp
-            translateX="60"
+            animate="animate-slideleft"
             />
 
             <div className=" w-auto h-auto max-h-[52rem] max-w-[91.0625rem] mx-auto mt-32">
-                <div ref={DiagramRef}>
+                <div 
+                id="diagram"
+                >
                     <LazyLoadImage
                     loading="lazy"
                     src={Diagram}
@@ -42,7 +41,10 @@ function MemoizedCostOptimization() {
             </div>
 
         <div className="mt-16">
-            <Contact/>
+            <Contact
+            id="cost-op"
+            animate="animate-slideleft"
+            />
         </div>
     </>
 );

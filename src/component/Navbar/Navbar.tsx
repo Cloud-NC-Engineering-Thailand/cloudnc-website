@@ -65,7 +65,14 @@ export const Navbar = () => {
                 handleChangeCurrentIndex(2);
                 handleChangeCurrentSubIndex(4);
                 break;
-          
+            case "/website-service":
+                handleChangeCurrentIndex(2);
+                handleChangeCurrentSubIndex(5);
+                break;
+            case "/tester-service":
+                handleChangeCurrentIndex(2);
+                handleChangeCurrentSubIndex(6);
+                break;
             case "/career":
                 handleChangeCurrentIndex(4);
                 handleChangeCurrentSubIndex(-1);
@@ -192,7 +199,7 @@ export const Navbar = () => {
     className={`bg-white shadow-xl fixed w-full  min-h-[100vh] h-full overflow-hidden z-50 transition-all top-0 ${state.openDrawer ? "right-0" : "-right-[105%]"}`}>
         <div className="flex flex-col gap-4  h-auto overflow-y-scroll max-h-[100vh] min-h-screen scrollbar-nav p-2">
             <div className="w-16 h-16 mx-auto mt-8">
-                <LazyLoadImage
+                <LazyLoadImage  
                 loading="lazy"
                 src={Logo}
                 className="w-full h-full cursor-pointer"
