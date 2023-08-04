@@ -39,7 +39,6 @@ export const TextInsideNavbarMobile: React.FC<TextInsideNavbarMobileProps> = ({c
         currentSubIndex={currentSubIndex}
         handleCloseDrawer={handleCloseDrawer}
 
-
         >
             <Transfer theme="outline" size="22"/>
         </DropdownNavbarMobile>
