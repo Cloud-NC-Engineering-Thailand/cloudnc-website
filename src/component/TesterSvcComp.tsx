@@ -15,7 +15,7 @@ export const TesterSvcComp: React.FC<TesterSvcProps> = ({animate="animate-slider
     return (
     <>
       <div className="mt-16 opacity-0" id="websvccomp">
-            <h6 className="header-no-mb mb-16">บริการให้คำปรึกษาด้านการทำเว็บไซด์</h6>
+            <h6 className="header-no-mb mb-16">บริการให้คำปรึกษาด้านการทดสอบระบบ</h6>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-24 justify-center px-4 md:px-32 lg:px-64">
                 <div className="mx-auto scale-125">
                     <LazyLoadImage
@@ -25,7 +25,7 @@ export const TesterSvcComp: React.FC<TesterSvcProps> = ({animate="animate-slider
                     alt="Traning Comp"
                     />
                 </div>
-                <div className="self-center flex flex-col gap-4 text-lg">
+                <div className="self-center flex flex-col gap-4 text-lg break-words">
               
                     <span>  
                   
