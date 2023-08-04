@@ -26,15 +26,13 @@ function MemorizeWebsiteSvcPage() {
 
         <DiagramWebSvc/>
        
-
-    </div>
-    
         <div className="my-32">
             <Contact
             id="traning-contact"
             header="ติดต่อเรา"
             />
         </div>
+    </div>
     </>
 );
 }
