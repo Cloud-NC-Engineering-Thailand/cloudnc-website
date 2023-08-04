@@ -1,19 +1,17 @@
 
 import { Contact } from "../component/Contact";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import React, { useRef } from "react";
+import React from "react";
 import { AppdeliveryComp } from "../component/AppdeliveryComp";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Banner = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589423/appdelivery/banner_kpaaki.jpg";
 const MineMap = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589424/appdelivery/minemap_oettgz.webp";
 
 function MemoizedAppDelivery() {
 
-    const mineMapRef = useRef<HTMLImageElement>(null);
 
-    SlideInElement({element:mineMapRef, translateX:"-60"});
-
+    ActionIntoView("#minemap", "animate-slideright")
 
     return (
     <>
@@ -27,11 +25,11 @@ function MemoizedAppDelivery() {
         </div>
         
         <AppdeliveryComp
-        translateX="60"
+        animate="animate-slideleft"
         />
 
         <div className="md:mx-32 mt-32">
-                <div ref={mineMapRef} className=" ">
+                <div id="minemap" className=" ">
                     <LazyLoadImage
                     loading="lazy"
                     src={MineMap}
@@ -43,7 +41,10 @@ function MemoizedAppDelivery() {
 
 
         <div className="mt-16">
-            <Contact/>
+            <Contact
+            id="contact-appdeli"
+            animate="animate-slideleft"
+            />
         </div>
     </>
 );

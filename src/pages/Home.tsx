@@ -26,16 +26,18 @@ function MemoizedHome () {
             </div>
 
             <ServiceComp
-            translateX="-60"
+            animate="animate-slideleft"
             />
 
             <Partner
-            translateX="60"
+            animate="animate-slideright"
             />
             
             <Customer/>
 
-            <Contact/>
+            <Contact
+            id="home-contac"
+            />
 
         
         </div>

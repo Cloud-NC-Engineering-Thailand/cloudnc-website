@@ -39,33 +39,35 @@ const MemoizedServicePage: React.FC = () => {
     <div className="flex flex-col gap-8 md:gap-16 mt-16 md:mt-32">
 
     <ServiceComp
-    translateX="60"
+    animate="animate-slideright"
     />
 
     <CloudMigrationComp
-    translateX="-60"
+    animate="animate-slideleft"
     />
 
     <AppdeliveryComp
-    translateX="60"
+    animate="animate-slideright"
     />
 
     <CostOptimizationComp
-    translateX="-60"
+    animate="animate-slideleft"
     />
 
     <TraningComp
-    translateX="60"
+    animate="animate-slideright"
     />
     
     <Partner
-    translateX="-60"
+    animate="animate-slideleft"
     />
     
     </div>
     
     <div className="mt-16 mb-8">
-        <Contact/>
+        <Contact
+        id="service-contact"
+        />
     </div>
 
     </div>

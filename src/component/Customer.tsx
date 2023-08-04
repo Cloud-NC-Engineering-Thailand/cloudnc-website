@@ -2,15 +2,21 @@ import { useRef } from "react";
 import { CustomerData } from "../Constant/CustomerText";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Customer = () => {
 
-    const CustomerRef = useRef<HTMLImageElement>(null);
-    SlideInElement({element:CustomerRef, duration:1, translateX:"-60", start:"top 10%"})
+    // const CustomerRef = useRef<HTMLImageElement>(null);
+    // SlideInElement({element:CustomerRef, duration:1, translateX:"-60", start:"top 10%"})
     
+    ActionIntoView("#customerRef", "animate-slideleft")
+
     return (
     <>
-     <div className="w-full " ref={CustomerRef}>
+     <div 
+     className="w-full "
+     id="customerRef"
+     >
         <p className="header">ลูกค้าของเรา</p>
         <div className="w-full flex flex-wrap  gap-12 justify-center px-4 md:px-32 lg:px-64 place-content-center">
             {CustomerData.map((item,i) => (

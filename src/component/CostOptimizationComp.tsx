@@ -1,23 +1,28 @@
-import React, { useRef } from "react";
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Comp1 = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589597/costoptimization/comp_d2oymg.webp";
 
 interface CostOptimizationCompProps {
-    translateX:string
+    animate:string
 
 }
 
-export const CostOptimizationComp: React.FC<CostOptimizationCompProps> = ({translateX="60"}) => {
+export const CostOptimizationComp: React.FC<CostOptimizationCompProps> = ({animate="animate-slideleft"}) => {
 
-    const AppDeliverRef = useRef<HTMLImageElement>(null);
-    SlideInElement({element:AppDeliverRef, translateX:translateX, duration:1.2});
+    // const AppDeliverRef = useRef<HTMLImageElement>(null);
+    // SlideInElement({element:AppDeliverRef, translateX:translateX, duration:1.2});
+
+    ActionIntoView("#costOptimize", animate)
 
     return (
     <>
 
-    <div className="career-bg mt-16" ref={AppDeliverRef}>
+    <div 
+    className="career-bg mt-16 opacity-0"
+    id="costOptimize"
+    >
             <h6 className="header">บริการช่วยควบคุมต้นทุนการใช้คลาวด์ </h6>
             <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-12 justify-center px-4 md:px-32 lg:px-64">
                 <div className="max-w-[30rem] max-h-[30rem] md:w-[42.1875rem] md:h-[42.1875rem]  mx-auto ">

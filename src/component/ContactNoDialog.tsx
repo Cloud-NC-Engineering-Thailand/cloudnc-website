@@ -2,10 +2,10 @@ import EmailSearch from "@icon-park/react/lib/icons/EmailSearch";
 import PhoneCall from "@icon-park/react/lib/icons/PhoneCall";
 import React, { useEffect, useRef, useState } from "react";
 import Local from "@icon-park/react/lib/icons/Local";
-import gsap from "gsap";
 import { TextFieldGoogle } from "./TextFieldGoogle/TextFieldGoogle";
 import { TextAreaGoogle } from "./TextFieldGoogle/TextAreaGoogle";
 import AcceptEmail from "@icon-park/react/lib/icons/AcceptEmail";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Line = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589832/line-blue_j5th6p.svg";
 
@@ -38,26 +38,7 @@ export const ContactNoDialog: React.FC<ContactProp> = ({header="ติดต่�
         errMsg:"",
     });
 
-    const ContactRef = useRef<HTMLImageElement>(null);
-
-    useEffect(() => {
-        const el = ContactRef.current;
-
-        gsap.fromTo(el, {
-            opacity:0,
-            transform: "translateX(60px)"
-            
-        },
-        {
-            opacity:1,
-            transform: "translateX(0)",
-            duration:1.2,
-            scrollTrigger:{
-                trigger:el
-            },
-         }
-        );
-    }, []);
+    ActionIntoView("#contact-no-dialog", "animate-slideright")
 
     const handleSetErr = (errIndex:number, errMsg:string) => {
         setState(prev => ({...prev, errIndex:errIndex, errMsg:errMsg}));
@@ -118,7 +99,7 @@ export const ContactNoDialog: React.FC<ContactProp> = ({header="ติดต่�
     
     return (
     <>
-    <div className="w-full " ref={ContactRef}>
+    <div className="w-full opacity-0" id="contact-no-dialog">
         <p className="text-4xl text-center font-medium mb-12">{header}</p>
         <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-12 justify-center ${padding}`}>
             <div className="flex flex-col gap-4">

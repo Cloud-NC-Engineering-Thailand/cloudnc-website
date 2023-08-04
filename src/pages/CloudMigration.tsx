@@ -1,9 +1,8 @@
-import { useRef } from "react";
 import { Contact } from "../component/Contact";
 import { CloudMigrationComp } from "../component/CloudMigrationComp";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import React from "react";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 const Banner = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589535/cloudMigration/banner_ole7iw.jpg";
 const MineMap = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589535/cloudMigration/minemap_y34siu.webp";
@@ -11,11 +10,8 @@ const MineMap = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589535/c
 
 function MemoizedCloudMigration() {
 
-    const CloudMigrationRef = useRef<HTMLImageElement>(null);
 
-    SlideInElement({element:CloudMigrationRef, translateX:"-60"});
-
-    
+    ActionIntoView("#cloudmigrate", "animate-slideleft")
 
 
     return (
@@ -30,10 +26,10 @@ function MemoizedCloudMigration() {
         </div>
         
         <CloudMigrationComp
-        translateX="60"
+        animate="animate-slideright"
         />
 
-        <div className="mx-32 mt-32" ref={CloudMigrationRef}>
+        <div className="mx-32 mt-32 opacity-0" id="cloudmigrate">
             <LazyLoadImage
             alt="minemap"
             loading="lazy"
@@ -44,7 +40,9 @@ function MemoizedCloudMigration() {
 
 
         <div className="mt-16">
-            <Contact/>
+            <Contact
+            id="cloud-migrate-contact"
+            />
         </div>
     </>
 );

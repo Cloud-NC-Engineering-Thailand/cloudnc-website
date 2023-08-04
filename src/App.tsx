@@ -4,6 +4,8 @@ import { HomeSkeleton } from "./Skeleton/HomeSkeleton";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Home = lazy(() => import("./pages/Home").then(module => ({ default: module.default })));
+const WebsiteSvcPage = lazy(() => import("./pages/WebsiteSvcPage").then(module => ({ default: module.default })));
+const TesterSvcPage = lazy(() => import("./pages/TesterSvcPage").then(module => ({ default: module.default })));
 const AboutPage = lazy(() => import("./pages/AboutPage").then(module => ({ default: module.default })));
 const Layout = lazy(() => import("./Layout/Layout").then(module => ({ default: module.Layout })));
 const Training = lazy(() => import("./pages/Training").then(module => ({ default: module.default })));
@@ -76,6 +78,24 @@ function App() {
           </Suspense> 
 
         } /> 
+        <Route path="/website-service" element={
+          <Suspense
+          fallback={<HomeSkeleton/>}
+          >
+            <WebsiteSvcPage/>
+          </Suspense> 
+
+        } />
+
+        <Route path="/tester-service" element={
+          <Suspense
+          fallback={<HomeSkeleton/>}
+          >
+            <TesterSvcPage/>
+          </Suspense> 
+
+        } /> 
+       
         <Route path="/career" element={
           <Suspense
           fallback={<HomeSkeleton/>}

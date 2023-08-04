@@ -1,24 +1,25 @@
-import { useRef } from "react";
 import { cardService } from "../Constant/ServiceText";
 import {Link, useNavigate} from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { SlideInElementWithTarget } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 
 
-const ServiceComp = ({translateX}:{translateX:string}) => {
+const ServiceComp = ({animate="animate-slideright"}:{animate:string}) => {
 
     const navigate = useNavigate();
     
     
-    const ServiceRef = useRef<HTMLImageElement>(null);
-    const target = useRef<HTMLImageElement>(null);
+    // const ServiceRef = useRef<HTMLImageElement>(null);
+    // const target = useRef<HTMLImageElement>(null);
     
-    SlideInElementWithTarget({element:ServiceRef, target:target, translateX:translateX});
+    // SlideInElementWithTarget({element:ServiceRef, target:target, translateX:translateX});
+
+    ActionIntoView("#service", animate)
 
     return (
-     <div className="w-full" ref={ServiceRef}>
+     <div className="w-full opacity-0" id="service">
         <p className="header">บริการของเรา</p>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 justify-center px-4 md:px-32 lg:px-64" ref={target} >
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 justify-center px-4 md:px-32 lg:px-64" >
             {cardService.map((item, i) => (
                 <div
                 className="flex flex-col gap-6 items-center"

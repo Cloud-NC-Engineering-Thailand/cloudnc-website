@@ -1,22 +1,23 @@
-import React, { useRef } from "react";
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { SlideInElement } from "../hook/slideInElement";
+import { ActionIntoView } from "../hook/actionWhenView";
 interface TraningCompProps {
-    translateX:string
+    animate:string
 }
 
 const Comp1 = "https://res.cloudinary.com/dzz6rgxkl/image/upload/v1686589819/training/comp1_hfvigo.webp";
 
-export const TraningComp: React.FC<TraningCompProps> = ({translateX="60"}) => {
+export const TraningComp: React.FC<TraningCompProps> = ({animate="animate-slideright"}) => {
 
 
-    const TraningRef = useRef<HTMLImageElement>(null);
-    SlideInElement({element:TraningRef, translateX:translateX});
+    // const TraningRef = useRef<HTMLImageElement>(null);
+    // SlideInElement({element:TraningRef, translateX:translateX});
 
+    ActionIntoView("#target", animate)
 
     return (
     <>
-      <div className="mt-16" ref={TraningRef}>
+      <div className="mt-16 opacity-0" id="target">
             <h6 className="header-no-mb mb-16">บริการจัดอบรม</h6>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 justify-center px-4 md:px-32 lg:px-64">
                 <div className="max-w-[30rem] max-h-[30rem] md:w-[42.1875rem] md:h-[42.1875rem]  mx-auto ">
