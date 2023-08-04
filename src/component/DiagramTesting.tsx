@@ -15,7 +15,7 @@ export const TestingDiagramSvc: React.FC<TestingDiagramSvcProps> = ({}) => {
     return (
     <>
      <div className="w-full px-4 md:px-36 lg:px-72 mt-32 opacity-0" id="diagram-web-svc">
-            <h6 className="header-no-mb mb-16">แผนผังกระบวนการทำเว็บไซด์</h6>
+            <h6 className="header-no-mb mb-16">แผงผังกระบวนการทดสอบระบบ</h6>
             <div className="w-full h-full">
                 <LazyLoadImage
                 loading="lazy"

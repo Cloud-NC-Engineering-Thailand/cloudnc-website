@@ -36,7 +36,7 @@ export const WebsiteSvcComp: React.FC<WebsiteSvcProps> = ({animate="animate-slid
                     <span className="text-blue-500">&nbsp;Concept </span> 
                     ของ 
                     <span className="text-blue-500">&nbsp;Cloud </span> และ <span className="text-blue-500">&nbsp;Agile </span> โดยเฉพาะ เป้าหมายหลักคือ ระบบทำงานได้อย่างมีประสิทธิภาพ และ ขยายได้ทุกความต้องการในธุรกิจ
-                    โดยใช้วัฒนธรรม <span className="text-blue-500">&nbsp;Cloud Native </span>, แอปพลิเคชันของคุณจะใช้เวลาในการพัฒนาน้อย และ ส่งมอบได้รวดเร็วที่สุด
+                    โดยใช้วัฒนธรรม <span className="text-blue-500">&nbsp;Cloud Native </span> แอปพลิเคชันของคุณจะใช้เวลาในการพัฒนาน้อย และ ส่งมอบได้รวดเร็วที่สุด
                     </span>
 
                 </div>
