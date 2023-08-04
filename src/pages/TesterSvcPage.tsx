@@ -27,7 +27,6 @@ function MemorizeTesterSvcPage() {
         <TestingDiagramSvc/>
        
 
-    </div>
     
         <div className="my-32">
             <Contact
@@ -35,6 +34,7 @@ function MemorizeTesterSvcPage() {
             header="ติดต่อเรา"
             />
         </div>
+    </div>
     </>
 );
 }
